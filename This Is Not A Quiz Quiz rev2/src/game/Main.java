@@ -89,7 +89,8 @@ public class Main extends Application {
 						} else {
 							lives = 1; difficulty = 3;
 							primaryStage.close();
-							questions.Q1.display();
+							//questions.Q1.display();
+							questions.Q26.display();
 						}
 					});
 			}

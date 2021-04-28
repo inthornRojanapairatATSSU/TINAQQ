@@ -43,7 +43,7 @@ public class Q16 extends game.Main {
 		}
 		answers[correctAnswer].setOnAction(e -> {
 			window.close();
-			System.out.println("Nice");
+			Q17.display();
 		});
 		
 		// SplitPane

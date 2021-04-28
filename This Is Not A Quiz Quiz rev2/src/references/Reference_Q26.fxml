@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.2" orientation="VERTICAL" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label alignment="CENTER" text="Find the right button again!">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Button layoutX="47.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="92.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="137.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="182.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="227.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="272.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="317.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="362.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="407.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="452.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="497.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="542.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="587.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="632.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="677.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="722.0" layoutY="68.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="47.0" layoutY="113.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
