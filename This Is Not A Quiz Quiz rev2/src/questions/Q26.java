@@ -11,10 +11,25 @@ public class Q26 extends game.Main {
 	
 	static Button[] button = new Button[80];
 	private static int number = 0;
+
+	//////////////////////////////////////////////////////////////////
+	//																//
+	//					There's Too Many Buttons!					//
+	//																//
+	// GridPane helped create 80 buttons. The player would only		//
+	// have 1.25% chance of clicking the right button if they		//
+	// were to guess.												//
+	//																//
+	// Answer: Click the 30th button.								//
+	// BR = bottom right											//
+	// 2L = two left												//
+	// 3U = three up												//
+	//																//
+	//////////////////////////////////////////////////////////////////
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 26 | Lives: 1");
+		window.setTitle(getTitle());
 		
 		Label question = new Label("BR-2L3U");
 		question.setFont(Font.font(25));
@@ -31,6 +46,8 @@ public class Q26 extends game.Main {
 		}
 		button[29].setOnAction(e -> {
 			window.close();
+			questionNumber++;
+			Q27.display();
 		});
 		
 		// SplitPane
@@ -57,7 +74,18 @@ public class Q26 extends game.Main {
 		
 		// Scene
 		splitpane.getItems().addAll(vbox, gridpane);
-		window.setScene(new Scene(splitpane, 800, 500));
+		Scene scene = new Scene(splitpane, 800, 500);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q27.display();
+				}
+			}
+		});
+		window.setScene(scene);
 		window.show();
 	}
 

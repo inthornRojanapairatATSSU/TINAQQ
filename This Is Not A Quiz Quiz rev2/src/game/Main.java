@@ -34,8 +34,9 @@ public class Main extends Application {
 	 */
 	
 	private Button[] difficultyButton = new Button[3];
-	public static int lives, difficulty;
+	public static int lives, difficulty, skips = 0, questionNumber = 1;
 	public static boolean foundSecret = false;
+	public static String title;
 	private boolean warning = false;
 	
 	//////////////////////////////////////////////////////////////////
@@ -87,10 +88,9 @@ public class Main extends Application {
 							difficultyButton[2].setText("Are you sure?");
 							warning = true;
 						} else {
-							lives = 1; difficulty = 3;
+							lives = 1; difficulty = 3; skips = 2;
 							primaryStage.close();
-							//questions.Q1.display();
-							questions.Q26.display();
+							questions.Q15.display();
 						}
 					});
 			}
@@ -143,6 +143,11 @@ public class Main extends Application {
 		return foundSecret;
 	}
 	
+	public static String getTitle() {
+		title = ("Question " +questionNumber +" | Lives: " +lives +" | Skips: " +skips);
+		return title;
+	}
+	
 	public static int rng(int min, int max) {
 		return (int)((Math.random() * (max - min)) + min);
 	}
@@ -185,6 +190,8 @@ public class Main extends Application {
 					lives = 1; break;
 			}
 			window.close();
+			questionNumber = 1;
+			skips = 0;
 			questions.Q1.display();
 		});
 		

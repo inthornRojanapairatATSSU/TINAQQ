@@ -26,7 +26,7 @@ public class Q6 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 6 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		Label question = new Label("Enter the alphabet");
 		question.setFont(Font.font(25));
@@ -41,11 +41,12 @@ public class Q6 extends game.Main {
 		submit.setOnAction(e -> {
 			if(answer.getText().equals("the alphabet")) {
 				window.close();
+				questionNumber++;
 				Q7.display();
 			} else {
 				lives --;
 				if(lives > 0) {
-					window.setTitle("Question 6 | Lives: " +lives);
+					window.setTitle(getTitle());
 				} else {
 					window.close();
 					gameOver("Failing Kindergarten", "Did you even learn your ABCs?");
@@ -69,11 +70,12 @@ public class Q6 extends game.Main {
 				if(ke.getCode().equals(KeyCode.ENTER)) {
 					if(answer.getText().equals("the alphabet")) {
 						window.close();
+						questionNumber++;
 						Q7.display();
 					} else {
 						lives--;
 						if(lives > 0) {
-							window.setTitle("Question 6 | Lives: " +lives);
+							window.setTitle(getTitle());
 						}
 						else {
 							window.close();
@@ -97,7 +99,18 @@ public class Q6 extends game.Main {
 		anchorpane.getChildren().addAll(answer, submit);
 		
 		splitpane.getItems().addAll(vbox, anchorpane);
-		window.setScene(new Scene(splitpane, 500, 350));
+		Scene scene = new Scene(splitpane, 500, 350);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q7.display();
+				}
+			}
+		});
+		window.setScene(scene);
 		window.show();
 	}
 

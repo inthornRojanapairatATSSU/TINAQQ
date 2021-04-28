@@ -3,6 +3,7 @@ package questions;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
@@ -14,7 +15,7 @@ public class Q5 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 5 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("What is [(n + 3)! / (n - 2)!]?");
@@ -32,17 +33,18 @@ public class Q5 extends game.Main {
 				answers[i].setOnAction(e -> {
 					lives--;
 					if(lives > 0) {
-						window.setTitle("Question 5 | Lives: " +lives);
+						window.setTitle(getTitle());
 					}
 					else {
 						window.close();
-						gameOver("Game Over Title", "Game Over Message");
+						gameOver("Factorial Fright", "Just punch that into your calculator");
 					}
 				});
 			}
 		}
 		answers[correctAnswer].setOnAction(e -> {
 			window.close();
+			questionNumber++;
 			Q6.display();
 		});
 		
@@ -65,6 +67,16 @@ public class Q5 extends game.Main {
 		// Scene
 		splitpane.getItems().addAll(vbox, anchorpane);
 		Scene scene = new Scene(splitpane, 500, 350);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q7.display();
+				}
+			}
+		});
 		window.setScene(scene);
 		window.show();
 	}

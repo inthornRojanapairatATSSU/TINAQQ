@@ -14,7 +14,7 @@ public class Q3 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 3 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("Can you remember this?\nBlue, Yellow, Orange, Purple");
@@ -33,7 +33,7 @@ public class Q3 extends game.Main {
 				answers[i].setOnAction(e -> {
 					lives--;
 					if(lives > 0) {
-						window.setTitle("Question 3 | Lives: " +lives);
+						window.setTitle(getTitle());
 					}
 					else {
 						window.close();
@@ -45,6 +45,7 @@ public class Q3 extends game.Main {
 		answers[3].setOnAction(e -> window.close());
 		answers[correctAnswer].setOnAction(e -> {
 			window.close();
+			questionNumber++;
 			Q4.display();
 		});
 		

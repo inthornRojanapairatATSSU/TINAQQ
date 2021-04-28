@@ -14,7 +14,7 @@ public class Q8 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question ? | Lives: " +lives);
+		window.setTitle("Question ? | Lives: " +lives +" | No skipping here!");
 		
 		// Control
 		Label question = new Label("Have you been paying attention\nto the question numbers?");
@@ -33,7 +33,7 @@ public class Q8 extends game.Main {
 				answers[i].setOnAction(e -> {
 					lives--;
 					if(lives > 0) {
-						window.setTitle("Question ? | Lives: " +lives);
+						window.setTitle("Question ? | Lives: " +lives +" | No skipping here!");
 					}
 					else {
 						window.close();
@@ -44,6 +44,7 @@ public class Q8 extends game.Main {
 		}
 		answers[correctAnswer].setOnAction(e -> {
 			window.close();
+			questionNumber++;
 			Q9.display();
 		});
 		

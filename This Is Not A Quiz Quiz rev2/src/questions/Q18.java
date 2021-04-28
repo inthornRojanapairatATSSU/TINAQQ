@@ -24,7 +24,7 @@ public class Q18 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 18 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("Suhvv X wr surfhhg");
@@ -67,7 +67,17 @@ public class Q18 extends game.Main {
 		scene.setOnKeyPressed(e -> {
 			if(e.getCode().toString().equalsIgnoreCase("U")) {
 				window.close();
+				skips++;
+				questionNumber++;
 				Q19.display();
+			}
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q19.display();
+				}
 			}
 		});
 		window.setScene(scene);

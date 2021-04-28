@@ -30,7 +30,7 @@ public class Q1 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 1 | Lives: " +getLives());
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("What are birds?");
@@ -48,7 +48,7 @@ public class Q1 extends game.Main {
 				answers[i].setOnAction(e -> {
 					lives--;
 					if(lives > 0) {
-						window.setTitle("Question 1 | Lives: " +lives);
+						window.setTitle(getTitle());
 					}
 					else {
 						window.close();
@@ -59,6 +59,7 @@ public class Q1 extends game.Main {
 		}
 		answers[2].setOnAction(e -> {
 			window.close();
+			questionNumber++;
 			Q2.display();
 		});
 		

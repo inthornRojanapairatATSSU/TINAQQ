@@ -12,9 +12,21 @@ public class Q19 extends game.Main {
 	
 	private static Button[] answers = new Button[4];
 	
+	//////////////////////////////////////////////////////////////////
+	//																//
+	//								Chess							//
+	//																//
+	// Answer: Qg8+													//
+	// The queen will check the king, then the rook is forced to	//
+	// take that queen. White will play the knight to f7 to			//
+	// checkmate the king since the black king is stuck with the	//
+	// rook.														//
+	//																//
+	//////////////////////////////////////////////////////////////////
+	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 19 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("What's the best chess move? (White to play)");
@@ -43,6 +55,7 @@ public class Q19 extends game.Main {
 		}
 		answers[1].setOnAction(e -> {
 			window.close();
+			questionNumber++;
 			Q20.display();
 		});
 		
@@ -50,7 +63,7 @@ public class Q19 extends game.Main {
 		SplitPane splitpane = new SplitPane();
 		splitpane.setDividerPositions(0.4, 0.5);
 		splitpane.setOrientation(Orientation.VERTICAL);
-		splitpane.setPrefSize(350, 500);
+		splitpane.setPrefSize(500, 350);
 		
 		// VBox
 		VBox vbox = new VBox(10);
@@ -65,6 +78,16 @@ public class Q19 extends game.Main {
 		// Scene
 		splitpane.getItems().addAll(vbox, chess, anchorpane);
 		Scene scene = new Scene(splitpane, 549, 494);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q20.display();
+				}
+			}
+		});
 		window.setScene(scene);
 		window.show();
 	}

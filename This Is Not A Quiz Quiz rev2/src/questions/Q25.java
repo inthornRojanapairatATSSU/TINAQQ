@@ -14,7 +14,7 @@ public class Q25 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 25 | Lives: 1");
+		window.setTitle("Question 25 | Lives: 1 | No skipping here!");
 		
 		// Control
 		Label question = new Label("How many triangles?");
@@ -43,8 +43,9 @@ public class Q25 extends game.Main {
 		}
 		answers[2].setOnAction(e -> {
 			if(foundSecret == true) {
+				Q25_alertBox.display();
 				window.close();
-				System.out.println("Secret Unlocked");
+				
 			} else {
 				window.close();
 				report.EndScreen.display();

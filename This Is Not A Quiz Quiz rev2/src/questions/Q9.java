@@ -3,6 +3,7 @@ package questions;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
@@ -26,7 +27,7 @@ public class Q9 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 9 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("How do you pay respects?");
@@ -44,7 +45,7 @@ public class Q9 extends game.Main {
 			answers[i].setOnAction(e -> {
 				lives--;
 				if(lives > 0) {
-					window.setTitle("Question 9 | Lives: " +lives);
+					window.setTitle(getTitle());
 				}
 				else {
 					window.close();
@@ -75,7 +76,16 @@ public class Q9 extends game.Main {
 		scene.setOnKeyPressed(e -> {
 			if(e.getCode().toString().equalsIgnoreCase("F")) {
 				window.close();
+				questionNumber++;
 				Q10.display();
+			}
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q10.display();
+				}
 			}
 		});
 		window.setScene(scene);

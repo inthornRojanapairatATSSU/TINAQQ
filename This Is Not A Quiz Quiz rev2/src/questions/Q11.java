@@ -2,6 +2,7 @@ package questions;
 
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.text.*;
 import javafx.stage.*;
@@ -22,7 +23,7 @@ public class Q11 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 11 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// Question
 		Label question = new Label("Check");
@@ -52,7 +53,7 @@ public class Q11 extends game.Main {
 			if((!box1.isSelected()) || (box2.isSelected() == true) || (box3.isSelected() == true) || (box4.isSelected() == true) || (box5.isSelected() == true)) {
 				lives--;
 				if(lives > 0) {
-					window.setTitle("Question 11 | Lives: " +lives);
+					window.setTitle(getTitle());
 				}
 				if(lives <= 0) {
 					window.close();
@@ -68,8 +69,19 @@ public class Q11 extends game.Main {
 		// Layout
 		AnchorPane layout = new AnchorPane();
 		layout.getChildren().addAll(question, box1, box2, box3, box4, box5, button);
-		
-		window.setScene(new Scene(layout, 367, 258));
+
+		Scene scene = new Scene(layout, 367, 258);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q12.display();
+				}
+			}
+		});
+		window.setScene(scene);
 		window.show();
 	}
 

@@ -49,7 +49,7 @@ public class Q13 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 13 | Lives: " +lives);
+		window.setTitle("Question 13 | Lives: " +lives +" | No skipping here!");
 		
 		Label question = new Label("Win these mini-games!");
 		question.setFont(Font.font(25)); question.setLayoutX(123); question.setLayoutY(80);
@@ -322,6 +322,7 @@ public class Q13 extends game.Main {
 		confirm.setOnAction(e -> {
 			if(confirm.getText() == "CONFIRM") {
 				window.close();
+				questionNumber++;
 				Q14.display();
 			}
 			else {
@@ -343,15 +344,15 @@ public class Q13 extends game.Main {
 		if(lives > 0) {
 			if(game == 1) {
 				Stage stage = (Stage) ulX.getScene().getWindow();
-				stage.setTitle("Question 13 | Lives: " +lives);
+				stage.setTitle("Question 13 | Lives: " +lives +" | No skipping here!");
 			}
 			else if(game == 2) {
 				Stage stage = (Stage) submit.getScene().getWindow();
-				stage.setTitle("Question 13 | Lives: " +lives);
+				stage.setTitle("Question 13 | Lives: " +lives +" | No skipping here!");
 			}
 			else {
 				Stage stage = (Stage) confirm.getScene().getWindow();
-				stage.setTitle("Question 13 | Lives: " +lives);
+				stage.setTitle("Question 13 | Lives: " +lives +" | No skipping here!");
 			}
 		}
 		if(lives <= 0) {

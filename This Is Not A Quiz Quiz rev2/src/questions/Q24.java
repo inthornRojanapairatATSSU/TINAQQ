@@ -13,7 +13,7 @@ public class Q24 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 24 | Lives: 1");
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("What's the right button?");
@@ -37,6 +37,7 @@ public class Q24 extends game.Main {
 		answers[1].setOnAction(e -> {
 			if(answers[1].getText().equals("Definitely me!")) {
 				window.close();
+				questionNumber++;
 				Q25.display();
 			} else {
 				lives--;
@@ -73,6 +74,16 @@ public class Q24 extends game.Main {
 		// Scene
 		splitpane.getItems().addAll(vbox, scrollpane);
 		Scene scene = new Scene(splitpane, 500, 350);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q25.display();
+				}
+			}
+		});
 		window.setScene(scene);
 		window.show();
 	}

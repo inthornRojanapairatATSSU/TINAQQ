@@ -4,6 +4,7 @@ import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
@@ -15,7 +16,7 @@ public class Q10 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 10 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// ImageView
 		ImageView image = new ImageView(new Image(Q10.class.getResourceAsStream("imageQuestion10.jpg")));
@@ -34,7 +35,7 @@ public class Q10 extends game.Main {
 				answers[i].setOnAction(e -> {
 					lives--;
 					if(lives > 0) {
-						window.setTitle("Question 10 | Lives: " +lives);
+						window.setTitle(getTitle());
 					}
 					else {
 						window.close();
@@ -45,6 +46,7 @@ public class Q10 extends game.Main {
 		}
 		answers[correctAnswer].setOnAction(e -> {
 			window.close();
+			questionNumber++;
 			Q11.display();
 		});
 		
@@ -52,7 +54,7 @@ public class Q10 extends game.Main {
 		SplitPane splitpane = new SplitPane();
 		splitpane.setDividerPositions(0.4);
 		splitpane.setOrientation(Orientation.VERTICAL);
-		splitpane.setPrefSize(549, 304);
+		splitpane.setPrefSize(550, 300);
 		
 		// AnchorPane
 		AnchorPane anchorpane = new AnchorPane();
@@ -61,7 +63,18 @@ public class Q10 extends game.Main {
 		
 		// Scene
 		splitpane.getItems().addAll(image, anchorpane);
-		window.setScene(new Scene(splitpane, 549, 304));
+		Scene scene = new Scene(splitpane, 550, 300);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q11.display();
+				}
+			}
+		});
+		window.setScene(scene);
 		window.show();
 	}
 

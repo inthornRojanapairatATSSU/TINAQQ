@@ -3,6 +3,7 @@ package questions;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
@@ -14,7 +15,7 @@ public class Q14 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 14 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("Which answer was for Question 3?");
@@ -32,7 +33,7 @@ public class Q14 extends game.Main {
 				answers[i].setOnAction(e -> {
 					lives--;
 					if(lives > 0) {
-						window.setTitle("Question 14 | Lives: " +lives);
+						window.setTitle(getTitle());
 					}
 					else {
 						window.close();
@@ -43,6 +44,7 @@ public class Q14 extends game.Main {
 		}
 		answers[correctAnswer].setOnAction(e -> {
 			window.close();
+			questionNumber++;
 			Q15.display();
 		});
 		
@@ -64,7 +66,18 @@ public class Q14 extends game.Main {
 		
 		// Scene
 		splitpane.getItems().addAll(vbox, anchorpane);
-		window.setScene(new Scene(splitpane, 500, 350));
+		Scene scene = new Scene(splitpane, 500, 350);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q15.display();
+				}
+			}
+		});
+		window.setScene(scene);
 		window.show();
 	}
 

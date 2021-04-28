@@ -12,9 +12,18 @@ public class Q17 extends game.Main {
 	private static Button[] answers = new Button[4];
 	private static int correctAnswer = 3;
 	
+	//////////////////////////////////////////////////////////////////
+	//																//
+	//						 Roman Numerals							//
+	//																//
+	// Answer: D													//
+	// I = 1, V = 5, X = 10, L = 50, C = 100, D = 500				//
+	// 																//
+	//////////////////////////////////////////////////////////////////
+	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 17 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("IVXLC?");
@@ -38,6 +47,7 @@ public class Q17 extends game.Main {
 		}
 		answers[correctAnswer].setOnAction(e -> {
 			window.close();
+			questionNumber++;
 			Q18.display();
 		});
 		
@@ -60,6 +70,16 @@ public class Q17 extends game.Main {
 		// Scene
 		splitpane.getItems().addAll(vbox, anchorpane);
 		Scene scene = new Scene(splitpane, 500, 350);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q18.display();
+				}
+			}
+		});
 		window.setScene(scene);
 		window.show();
 	}

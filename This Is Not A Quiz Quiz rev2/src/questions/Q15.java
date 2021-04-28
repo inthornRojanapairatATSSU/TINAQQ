@@ -35,7 +35,7 @@ public class Q15 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 15 | Lives: " +lives);
+		window.setTitle("Question 15 | Lives: " +lives +" | No skipping here!");
 		
 		Label question = new Label("Do you remember?");
 		question.setFont(Font.font(25));
@@ -59,7 +59,7 @@ public class Q15 extends game.Main {
 						else {
 							lives--;
 							if(lives > 0) {
-								window.setTitle("Question 15 | Lives: " +lives);
+								window.setTitle("Question 15 | Lives: " +lives +" | No skipping here!");
 							}
 							if(lives <= 0) {
 								window.close();

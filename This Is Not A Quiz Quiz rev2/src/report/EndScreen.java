@@ -17,6 +17,7 @@ public class EndScreen extends game.Main {
 		final String report = "THIS IS NOT A QUIZ QUIZ: GAME REPORT\n\n"
 				+ "Difficulty: " +difficultyToString +"\n\n"
 				+ "Lives: " +lives +"\n\n"
+				+ "Skips: " +skips +"\n\n"
 				+ "Secret: " +foundSecret +"\n\n"
 				+ "Final Grade: " +performanceGrade +"\n\n"
 				+ finalNotes;
@@ -44,6 +45,7 @@ public class EndScreen extends game.Main {
 		if(difficulty == 3) {
 			hardPlusMode.setOnAction(e -> {
 				window.close();
+				questionNumber = 16;
 				questions.Q16.display();
 				difficulty = 4;
 			});
@@ -79,6 +81,8 @@ public class EndScreen extends game.Main {
 				difficultyToString = "Hard"; break;
 			case 4:
 				difficultyToString = "Hard Plus"; break;
+			case 5:
+				difficultyToString = "Impossible"; break;
 			default:
 				difficultyToString = "error"; break;
 		}
@@ -115,6 +119,10 @@ public class EndScreen extends game.Main {
 		else if(difficulty == 4) {
 			finalNotes = "Final Notes: If you find the secret, you unlock additional questions!";
 			performanceGrade = "S";
+		}
+		else if(difficulty == 5) {
+			finalNotes = "Final Notes: Congrats on 100% completion! Now what?";
+			performanceGrade = "S+";
 		}
 		else {
 			finalNotes = "Final Notes: Do you have what it takes to go even further beyond?";

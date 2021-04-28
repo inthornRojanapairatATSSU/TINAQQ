@@ -20,26 +20,27 @@
       </VBox>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
          <children>
-            <Button layoutX="41.0" layoutY="65.0" mnemonicParsing="false" prefWidth="200.0" text="Answer #1">
+            <Button layoutX="18.0" layoutY="34.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="101.0" text="S">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="257.0" layoutY="65.0" mnemonicParsing="false" prefWidth="200.0" text="Answer #2">
+            <Button layoutX="138.0" layoutY="34.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="101.0" text="S">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="41.0" layoutY="110.0" mnemonicParsing="false" prefWidth="200.0" text="Answer #3">
+            <Button layoutX="258.0" layoutY="34.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="101.0" text="S">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="257.0" layoutY="110.0" mnemonicParsing="false" prefWidth="200.0" text="Answer #4">
+            <Button layoutX="380.0" layoutY="34.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="101.0" text="S">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
+            <Button layoutX="223.0" layoutY="147.0" mnemonicParsing="false" text="I Don't..." />
          </children>
       </AnchorPane>
    </items>

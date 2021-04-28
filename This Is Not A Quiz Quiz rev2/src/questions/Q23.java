@@ -11,10 +11,25 @@ public class Q23 extends game.Main {
 	
 	private static Button[] pianoKey = new Button[6];
 	private static String playOrder = "";
+
+	//////////////////////////////////////////////////////////////////
+	//																//
+	//				Twinkle Twinkle Little Star Melody				//
+	//																//
+	// I was actually going to try and add piano keys to this, but	//
+	// it would not work, so I settled with changing the window		//
+	// title using String. The buttons are supposed to be piano		//
+	// keys. The only way the player would figure this out is if	//
+	// they look up a music sheet or they happen to know how to		//
+	// play the melody.												//
+	//																//
+	// Answer: CCGGAAG												//
+	//																//
+	//////////////////////////////////////////////////////////////////
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 23 | Lives: 1 | ");
+		window.setTitle(getTitle() +" |");
 		
 		Label question = new Label("Twinkle twinkle little star...");
 		question.setFont(Font.font(25)); question.setLayoutX(51); question.setLayoutY(50);
@@ -32,37 +47,37 @@ public class Q23 extends game.Main {
 		pianoKey[0].setOnAction(e -> {
 			if(playOrder.length() < 7) {
 				playOrder += "C";
-				window.setTitle("Question 23 | Lives: 1 | " +playOrder);
+				window.setTitle(getTitle() +" | " +playOrder);
 			}
 		});
 		pianoKey[1].setOnAction(e -> {
 			if(playOrder.length() < 7) {
 				playOrder += "D";
-				window.setTitle("Question 23 | Lives: 1 | " +playOrder);
+				window.setTitle(getTitle() +" | " +playOrder);
 			}
 		});
 		pianoKey[2].setOnAction(e -> {
 			if(playOrder.length() < 7) {
 				playOrder += "E";
-				window.setTitle("Question 23 | Lives: 1 | " +playOrder);
+				window.setTitle(getTitle() +" | " +playOrder);
 			}
 		});
 		pianoKey[3].setOnAction(e -> {
 			if(playOrder.length() < 7) {
 				playOrder += "F";
-				window.setTitle("Question 23 | Lives: 1 | " +playOrder);
+				window.setTitle(getTitle() +" | " +playOrder);
 			}
 		});
 		pianoKey[4].setOnAction(e -> {
 			if(playOrder.length() < 7) {
 				playOrder += "G";
-				window.setTitle("Question 23 | Lives: 1 | " +playOrder);
+				window.setTitle(getTitle() +" | " +playOrder);
 			}
 		});
 		pianoKey[5].setOnAction(e -> {
 			if(playOrder.length() <= 7) {
 				playOrder += "A";
-				window.setTitle("Question 23 | Lives: 1 | " +playOrder);
+				window.setTitle(getTitle() +" | " +playOrder);
 			}
 		});
 		
@@ -73,6 +88,8 @@ public class Q23 extends game.Main {
 		submit.setOnAction(e -> {
 			if(playOrder.equalsIgnoreCase("CCGGAAG")) {
 				window.close();
+				skips++;
+				questionNumber++;
 				Q24.display();
 			}
 			else {
@@ -88,7 +105,7 @@ public class Q23 extends game.Main {
 		reset.setLayoutX(277); reset.setLayoutY(145);
 		reset.setOnAction(e -> {
 			playOrder = "";
-			window.setTitle("Question 23 | Lives: 1 |");
+			window.setTitle(getTitle() +" |");
 		});
 		
 		// SplitPane
@@ -109,7 +126,18 @@ public class Q23 extends game.Main {
 		
 		// Scene
 		splitpane.getItems().addAll(vbox, anchorpane);
-		window.setScene(new Scene(splitpane, 500, 350));
+		Scene scene = new Scene(splitpane, 500, 350);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q24.display();
+				}
+			}
+		});
+		window.setScene(scene);
 		window.show();
 	}
 

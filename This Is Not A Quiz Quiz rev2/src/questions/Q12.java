@@ -27,7 +27,7 @@ public class Q12 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 12 | Lives: " +lives);
+		window.setTitle("Question 12 | Lives: " +lives + " | No skipping here!");
 		
 		// Counter
 		Label label = new Label("Cookies:");
@@ -68,7 +68,7 @@ public class Q12 extends game.Main {
 			if(cookies < 750) {
 				lives--;
 				if(lives > 0) {
-					window.setTitle("Question 12 | Lives: " +lives);
+					window.setTitle("Question 12 | Lives: " +lives +" | No skipping here!");
 				}
 				else {
 					cookies = 0;
@@ -77,8 +77,10 @@ public class Q12 extends game.Main {
 				}
 			}
 			else {
-				cookies = 0;
+				cookies = 0; upgrade = 0;
 				window.close();
+				questionNumber++;
+				skips++;
 				Q13.display();
 			}
 		});

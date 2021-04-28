@@ -11,10 +11,19 @@ public class Q21 extends game.Main {
 	
 	private static Button[] answers = new Button[4];
 	private static int correctAnswer = 0;
+
+	//////////////////////////////////////////////////////////////////
+	//																//
+	//							Movie Trivia						//
+	//																//
+	// Answer: 11/13/09												//
+	// The movie, 2012, was released on November 13, 2009.			//
+	//																//
+	//////////////////////////////////////////////////////////////////
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 21 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("When was 2012?");
@@ -38,6 +47,7 @@ public class Q21 extends game.Main {
 		}
 		answers[correctAnswer].setOnAction(e -> {
 			window.close();
+			questionNumber++;
 			Q22.display();
 		});
 		
@@ -59,7 +69,18 @@ public class Q21 extends game.Main {
 		
 		// Scene
 		splitpane.getItems().addAll(vbox, anchorpane);
-		window.setScene(new Scene(splitpane, 500, 350));
+		Scene scene = new Scene(splitpane, 500, 350);
+		scene.setOnKeyPressed(e -> {
+			if(e.getCode().toString().equalsIgnoreCase("S")) {
+				if(skips > 0) {
+					skips--;
+					window.close();
+					questionNumber++;
+					Q22.display();
+				}
+			}
+		});
+		window.setScene(scene);
 		window.show();
 	}
 

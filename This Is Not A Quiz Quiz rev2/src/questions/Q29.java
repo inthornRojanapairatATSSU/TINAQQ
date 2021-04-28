@@ -7,20 +7,20 @@ import javafx.scene.layout.*;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 
-public class Q16 extends game.Main {
+public class Q29 extends game.Main {
 	
 	private static Button[] answers = new Button[4];
-	private static int correctAnswer = 2;
+	private static int correctAnswer = 0;
 	
 	public static void display() {
 		Stage window = new Stage();
 		window.setTitle(getTitle());
 		
 		// Control
-		Label question = new Label("When did Adobe Flash discontinue?");
+		Label question = new Label("Do you deserve this win?");
 		question.setFont(Font.font(25)); question.setLayoutX(51); question.setLayoutY(50);
 
-		answers[0] = new Button("January 1, 2021"); answers[1] = new Button("January 12, 2021"); answers[2] = new Button("December 31, 2020"); answers[3] = new Button("R.I.P Flash");
+		answers[0] = new Button("Yes"); answers[1] = new Button("No"); answers[2] = new Button("This Quiz Sucks"); answers[3] = new Button("Apple Pie");
 		answers[0].setLayoutX(41); answers[0].setLayoutY(65);
 		answers[1].setLayoutX(257); answers[1].setLayoutY(65);
 		answers[2].setLayoutX(41); answers[2].setLayoutY(110);
@@ -31,20 +31,15 @@ public class Q16 extends game.Main {
 			if(i != correctAnswer) {
 				answers[i].setOnAction(e -> {
 					lives--;
-					if(lives > 0) {
-						window.setTitle(getTitle());
-					}
-					else {
-						window.close();
-						gameOver("Fake Flash Fan", "I thought you CoolMathGames");
-					}
+					window.close();
+					gameOver("Game Over!", "You failed the secret run!");
 				});
 			}
 		}
 		answers[correctAnswer].setOnAction(e -> {
 			window.close();
 			questionNumber++;
-			Q17.display();
+			Q30.display();
 		});
 		
 		// SplitPane
@@ -72,7 +67,7 @@ public class Q16 extends game.Main {
 					skips--;
 					window.close();
 					questionNumber++;
-					Q17.display();
+					Q30.display();
 				}
 			}
 		});

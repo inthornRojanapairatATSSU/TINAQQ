@@ -14,7 +14,7 @@ public class Q2 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle("Question 2 | Lives: " +lives);
+		window.setTitle(getTitle());
 		
 		// Control
 		Label question = new Label("How much does a Notebook cost?");
@@ -32,7 +32,7 @@ public class Q2 extends game.Main {
 				answers[i].setOnAction(e -> {
 					lives--;
 					if(lives > 0) {
-						window.setTitle("Question 2 | Lives: " +lives);
+						window.setTitle(getTitle());
 					}
 					else {
 						window.close();
@@ -43,6 +43,7 @@ public class Q2 extends game.Main {
 		}
 		answers[correctAnswer].setOnAction(e -> {
 			window.close();
+			questionNumber++;
 			Q3.display();
 		});
 		
