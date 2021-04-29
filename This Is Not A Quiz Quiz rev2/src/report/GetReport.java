@@ -16,19 +16,19 @@ public class GetReport {
 	
 	public static void getName() {
 		Stage window = new Stage();
-		window.setTitle("Get names");
+		window.setTitle("This doesn't do anything!");
 		window.initModality(Modality.APPLICATION_MODAL);
 		
 		////////////////////////////////////////// Connection to Database //////////////////////////////////////////
-		connectToDB();
+		//connectToDB();
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 		firstName.setPromptText("First Name");
 		lastName.setPromptText("Last Name");
 		
-		Button submit = new Button("Submit");
+		Button submit = new Button("Click me to receive your report!");
 		submit.setOnAction(e -> {
-			insertIntoDB();
+			//insertIntoDB();
 			window.close();
 		});
 		
@@ -41,16 +41,16 @@ public class GetReport {
 		window.showAndWait();
 	}
 	
-	public static void connectToDB() {
+	/*public static void connectToDB() {
 		System.out.println("Attempting connection to database");
 		try {
-			conn = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=GUI_DB1", "inRojanapairat", "ssuCSC/tinaqq2021");
+			conn = DriverManager.getConnection("", "", "");
 			System.out.println("Database is connected");
 			statement = conn.createStatement();
 		} catch(SQLException e) {
 			System.out.println("Connection failed: " +e);
 		}
-	}
+	}*/
 	
 	public static void insertIntoDB() {
 		try {
