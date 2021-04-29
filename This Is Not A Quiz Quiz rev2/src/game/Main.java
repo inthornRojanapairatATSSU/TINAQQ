@@ -88,9 +88,9 @@ public class Main extends Application {
 							difficultyButton[2].setText("Are you sure?");
 							warning = true;
 						} else {
-							lives = 1; difficulty = 3; skips = 2;
+							lives = 1; difficulty = 3;
 							primaryStage.close();
-							questions.Q15.display();
+							questions.Q1.display();
 						}
 					});
 			}
