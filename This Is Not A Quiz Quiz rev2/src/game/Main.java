@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 
 public class Main extends Application {
@@ -62,7 +63,7 @@ public class Main extends Application {
 		// Control
 		Label newGame = new Label("Select difficulty level:");
 		newGame.setFont(Font.font(26));
-		newGame.setLayoutX(508); newGame.setLayoutY(59);
+		newGame.setLayoutX(508); newGame.setLayoutY(56);
 		
 		// Choose Difficulty Buttons
 		for(int i = 0; i < difficultyButton.length; i++) {
@@ -96,8 +97,15 @@ public class Main extends Application {
 			}
 			difficultyButton[i].setFont(Font.font(20));
 			difficultyButton[i].setPrefSize(239, 50);
-			difficultyButton[i].setLayoutX(508); difficultyButton[i].setLayoutY(134 + (110 * i));
+			difficultyButton[i].setLayoutX(508); difficultyButton[i].setLayoutY(105 + (71 * i));
 		}
+		
+		// "About" Button
+		Button about = new Button("About");
+		about.setPrefSize(239, 50); about.setFont(Font.font("System", FontWeight.BOLD, 20));
+		about.setTextFill(Color.web("#15b91b"));
+		about.setLayoutX(508); about.setLayoutY(354);
+		about.setOnAction(e -> About.about());
 		
 		// Secret Button
 		Button secretButton = new Button("SECRET");
@@ -110,7 +118,7 @@ public class Main extends Application {
 		
 		// AnchorPane
 		AnchorPane layout = new AnchorPane();
-		layout.getChildren().addAll(title, newGame, difficultyButton[0], difficultyButton[1], difficultyButton[2], secretButton);
+		layout.getChildren().addAll(title, newGame, difficultyButton[0], difficultyButton[1], difficultyButton[2], about, secretButton);
 		
 		// Scene
 		primaryStage.setScene(new Scene(layout, 822, 460));

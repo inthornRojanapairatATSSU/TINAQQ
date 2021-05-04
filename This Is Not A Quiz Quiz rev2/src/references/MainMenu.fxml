@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="460.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="822.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.Controller">
+<AnchorPane maxHeight="460.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
       <ImageView fitHeight="400.0" fitWidth="400.0" layoutX="33.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@title.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="easyMode" layoutX="508.0" layoutY="134.0" mnemonicParsing="false" onAction="#setEasy" prefHeight="50.0" prefWidth="239.0" text="Easy">
+      <Button fx:id="easyMode" layoutX="508.0" layoutY="108.0" mnemonicParsing="false" onAction="#setEasy" prefHeight="50.0" prefWidth="239.0" text="Easy">
          <font>
             <Font size="20.0" />
          </font>
@@ -24,16 +24,21 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <Button fx:id="normalMode" layoutX="508.0" layoutY="244.0" mnemonicParsing="false" onAction="#setNormal" prefHeight="50.0" prefWidth="239.0" text="Normal">
+      <Button fx:id="normalMode" layoutX="508.0" layoutY="179.0" mnemonicParsing="false" onAction="#setNormal" prefHeight="50.0" prefWidth="239.0" text="Normal">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="hardMode" layoutX="508.0" layoutY="354.0" mnemonicParsing="false" onAction="#setHard" prefHeight="50.0" prefWidth="239.0" text="Hard">
+      <Button fx:id="hardMode" layoutX="508.0" layoutY="250.0" mnemonicParsing="false" onAction="#setHard" prefHeight="50.0" prefWidth="239.0" text="Hard">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
       <Button fx:id="secretButton" layoutX="998.0" layoutY="244.0" mnemonicParsing="false" onAction="#enableSecret" prefHeight="25.0" prefWidth="132.0" text="SECRET" />
+      <Button fx:id="hardMode1" layoutX="508.0" layoutY="357.0" mnemonicParsing="false" onAction="#setHard" prefHeight="50.0" prefWidth="239.0" text="ABOUT" textFill="#15b91b">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
