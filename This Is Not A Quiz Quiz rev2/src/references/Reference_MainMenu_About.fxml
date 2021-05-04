@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="82.0" layoutY="38.0" text="Made by" textAlignment="CENTER">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="74.0" layoutY="98.0" text="Inthorn A. Rojanapairat" textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="148.0" text="Inspired by">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="209.0" text="&quot;The Impossible Quiz&quot; by Splapp">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="259.0" text="Made using">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="320.0" text="Eclipse, JavaFX, and SceneBuilder">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="64.0" layoutY="419.0" mnemonicParsing="false" prefWidth="175.0" text="Close" textAlignment="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Hyperlink layoutX="83.0" layoutY="362.0" text="My GitHub">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>
