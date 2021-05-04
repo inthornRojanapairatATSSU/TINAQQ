@@ -45,6 +45,7 @@ public class Q4 extends game.Main {
 			window.close();
 			skips++;
 			questionNumber++;
+			game.SkipAlert.display();
 			Q5.display();
 		});
 		
