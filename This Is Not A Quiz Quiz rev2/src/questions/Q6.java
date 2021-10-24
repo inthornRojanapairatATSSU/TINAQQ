@@ -26,7 +26,7 @@ public class Q6 extends game.Main {
 	
 	public static void display() {
 		Stage window = new Stage();
-		window.setTitle(getTitle());
+		window.setTitle("Question 6 | Lives: " +lives + " | No skipping here!");
 		
 		Label question = new Label("Enter the alphabet");
 		question.setFont(Font.font(25));
@@ -100,16 +100,6 @@ public class Q6 extends game.Main {
 		
 		splitpane.getItems().addAll(vbox, anchorpane);
 		Scene scene = new Scene(splitpane, 500, 350);
-		scene.setOnKeyPressed(e -> {
-			if(e.getCode().toString().equalsIgnoreCase("S")) {
-				if(skips > 0) {
-					skips--;
-					window.close();
-					questionNumber++;
-					Q7.display();
-				}
-			}
-		});
 		window.setScene(scene);
 		window.show();
 	}
