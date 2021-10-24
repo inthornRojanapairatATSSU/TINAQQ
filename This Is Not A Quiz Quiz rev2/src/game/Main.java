@@ -216,7 +216,6 @@ public class Main extends Application {
 				questions.Q1.display();
 				
 				// reset data
-				questions.Q12.cookies = 0;
 				questions.Q13.game = 1; questions.Q13.order = 1; questions.Q13.randomNumber1 = rng(400, 499); questions.Q13.randomNumber2 = rng(440, 460);
 				questions.Q13.blBlank.setText("  "); questions.Q13.topBlank.setText("  ");
 			} else {
