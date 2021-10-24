@@ -8,7 +8,8 @@ import javafx.stage.Stage;
 
 public class Q12 extends game.Main {
 	
-	protected static int cookies = 0, upgrade = 0;
+	public static int cookies = 0, upgrade = 0;
+	protected static Label cookieCounter = new Label(Integer.toString(cookies));
 
 	//////////////////////////////////////////////////////////////////
 	//																//
@@ -32,7 +33,6 @@ public class Q12 extends game.Main {
 		// Counter
 		Label label = new Label("Cookies:");
 		label.setFont(Font.font(25)); label.setLayoutX(205); label.setLayoutY(29);
-		Label cookieCounter = new Label(Integer.toString(cookies));
 		cookieCounter.setFont(Font.font(25)); cookieCounter.setLayoutX(205); cookieCounter.setLayoutY(71);
 		
 		Button addCookie = new Button("Click Me!");

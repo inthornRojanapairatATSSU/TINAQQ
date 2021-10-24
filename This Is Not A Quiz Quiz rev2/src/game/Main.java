@@ -35,7 +35,7 @@ public class Main extends Application {
 	 */
 	
 	private Button[] difficultyButton = new Button[3];
-	public static int lives, difficulty, skips = 0, questionNumber = 1;
+	public static int lives, difficulty, skips = 0, questionNumber = 1, dlcMode = 0;
 	public static boolean foundSecret = false;
 	public static String title;
 	private boolean warning = false;
@@ -91,7 +91,7 @@ public class Main extends Application {
 						} else {
 							lives = 1; difficulty = 3;
 							primaryStage.close();
-							questions.Q1.display();
+							questions.Q13.display();
 						}
 					});
 			}
@@ -102,10 +102,21 @@ public class Main extends Application {
 		
 		// "About" Button
 		Button about = new Button("About");
-		about.setPrefSize(239, 50); about.setFont(Font.font("System", FontWeight.BOLD, 20));
+		about.setPrefSize(114, 50); about.setFont(Font.font("System", FontWeight.BOLD, 20));
 		about.setTextFill(Color.web("#15b91b"));
 		about.setLayoutX(508); about.setLayoutY(354);
 		about.setOnAction(e -> About.about());
+		
+		// "DLC" Button
+		Button dlc = new Button("DLC");
+		dlc.setPrefSize(114, 50); dlc.setFont(Font.font("System", FontWeight.BOLD, 20));
+		dlc.setTextFill(Color.web("#ee8f2a"));
+		dlc.setLayoutX(633); dlc.setLayoutY(354);
+		dlc.setOnAction(e -> {
+			lives = 3; difficulty = 2; dlcMode = 1;
+			primaryStage.close();
+			dlc_halloween.Q1.display();
+		});
 		
 		// Secret Button
 		Button secretButton = new Button("SECRET");
@@ -118,7 +129,7 @@ public class Main extends Application {
 		
 		// AnchorPane
 		AnchorPane layout = new AnchorPane();
-		layout.getChildren().addAll(title, newGame, difficultyButton[0], difficultyButton[1], difficultyButton[2], about, secretButton);
+		layout.getChildren().addAll(title, newGame, difficultyButton[0], difficultyButton[1], difficultyButton[2], about, dlc, secretButton);
 		
 		// Scene
 		primaryStage.setScene(new Scene(layout, 822, 460));
@@ -197,10 +208,23 @@ public class Main extends Application {
 				case 3:
 					lives = 1; break;
 			}
-			window.close();
-			questionNumber = 1;
-			skips = 0;
-			questions.Q1.display();
+			
+			if(dlcMode == 0) {
+				window.close();
+				questionNumber = 1;
+				skips = 0;
+				questions.Q12.display();
+				
+				// reset data
+				questions.Q12.cookies = 0;
+				questions.Q13.game = 1; questions.Q13.order = 1; questions.Q13.randomNumber1 = rng(400, 499); questions.Q13.randomNumber2 = rng(440, 460);
+				questions.Q13.blBlank.setText("  "); questions.Q13.topBlank.setText("  ");
+			} else {
+				window.close();
+				questionNumber = 1;
+				skips = 0;
+				dlc_halloween.Q1.display();
+			}
 		});
 		
 		Button exit = new Button();

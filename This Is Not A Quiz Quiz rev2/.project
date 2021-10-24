@@ -20,4 +20,11 @@
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>images/dlcHalloweenImageQuestion5.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Downloads/dlcHalloweenImageQuestion5.jpg</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

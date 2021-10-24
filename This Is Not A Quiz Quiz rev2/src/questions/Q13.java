@@ -8,9 +8,13 @@ import javafx.stage.*;
 
 public class Q13 extends game.Main {
 	
-	private static int game = 1, order = 1, randomNumber1 = rng(400, 499), randomNumber2 = rng(440, 460);
+	public static int game = 1, order = 1, randomNumber1 = rng(400, 499), randomNumber2 = rng(440, 460);
 	static Scene scene1, scene2, scene3;
 	static Button ulX = new Button("X"), submit = new Button("Submit"), confirm = new Button("LOCKED");
+	
+	public static Button blBlank = new Button("  ");
+	public static Button topBlank = new Button("  ");
+	public static Button urBlank = new Button("  ");
 
 	//////////////////////////////////////////////////////////////////
 	//																//
@@ -56,12 +60,12 @@ public class Q13 extends game.Main {
 		
 		// Tic-Tac-Toe
 		ulX.setFont(Font.font(25)); ulX.setLayoutX(172); ulX.setLayoutY(165);
-		Button topBlank = new Button("  "); topBlank.setFont(Font.font(25)); topBlank.setLayoutX(226); topBlank.setLayoutY(165);
-		Button urBlank = new Button("  "); urBlank.setFont(Font.font(25)); urBlank.setLayoutX(283); urBlank.setLayoutY(165);
+		topBlank.setFont(Font.font(25)); topBlank.setLayoutX(226); topBlank.setLayoutY(165);
+		urBlank.setFont(Font.font(25)); urBlank.setLayoutX(283); urBlank.setLayoutY(165);
 		Button mlO = new Button("O"); mlO.setFont(Font.font(25)); mlO.setLayoutX(170); mlO.setLayoutY(224);
 		Button centerX = new Button("X"); centerX.setFont(Font.font(25)); centerX.setLayoutX(226); centerX.setLayoutY(224);
 		Button mrX = new Button("X"); mrX.setFont(Font.font(25)); mrX.setLayoutX(282); mrX.setLayoutY(224); // not a Resident Evil reference
-		Button blBlank = new Button("  "); blBlank.setFont(Font.font(25)); blBlank.setLayoutX(172); blBlank.setLayoutY(283);
+		blBlank.setFont(Font.font(25)); blBlank.setLayoutX(172); blBlank.setLayoutY(283);
 		Button bottomO = new Button("O"); bottomO.setFont(Font.font(25)); bottomO.setLayoutX(224); bottomO.setLayoutY(283);
 		Button brO = new Button("O"); brO.setFont(Font.font(25)); brO.setLayoutX(280); brO.setLayoutY(283);
 		
