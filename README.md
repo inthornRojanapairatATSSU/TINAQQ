@@ -6,9 +6,14 @@ See the launch trailer [here!](https://www.youtube.com/watch?v=CaRHQZP4EwI)
 - Additions:
   - Added an "About" window
   - Added skip instruction window
+# Update no.2 __(10.24.21)__
+- Additions:
+  - The Halloween update is here!
+- Fixes:
+  - Data in a couple questions are now fully reset if the player restarts their game after failing
 
 ## revision2 (4.28.21)
-![Title Image](https://github.com/inthornRojanapairatATSSU/TINAQQ/blob/master/This%20Is%20Not%20A%20Quiz%20Quiz%20rev2/src/game/title.jpg)
+![Title Image](https://github.com/inthornRojanapairatATSSU/TINAQQ/blob/master/This%20Is%20Not%20A%20Quiz%20Quiz%20rev2/src/game/title_halloweenupdate.jpg)
 
 ## How to Install
 * Download [here](https://github.com/inthornRojanapairatATSSU/TINAQQ/archive/refs/heads/master.zip) or using *Download as ZIP*.
@@ -16,7 +21,7 @@ See the launch trailer [here!](https://www.youtube.com/watch?v=CaRHQZP4EwI)
 * You can also use *Eclipse's smart git import tool*.
 * If the project does not reference a JavaFX user library, configure it so that it does.
 * The Main application can be found in the package called *game*
-* Add this to your VM arguments: *--module-path "__YOUR DIRECTORY PATH__\lib" --add-modules javafx.controls,javafx.fxml*
+* Add this to your VM arguments: *--module-path "__YOUR JAVA DIRECTORY PATH__\lib" --add-modules javafx.controls,javafx.fxml*
 
 ## Overview
 A game inspired by the Impossible Quiz (2007) by Splapp.
@@ -42,5 +47,5 @@ Most questions will have answers, explanation, and commentary. Check those out i
 - [X] Hard plus questions
 - [X] Secret questions
 - [X] Title Image Edit
-- [ ] DLC questions: +10 questions? +20? +30?
+- [X] DLC questions
 - [ ] A sequel
