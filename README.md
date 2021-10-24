@@ -11,6 +11,11 @@ See the launch trailer [here!](https://www.youtube.com/watch?v=CaRHQZP4EwI)
   - The Halloween update is here!
 - Fixes:
   - Data in a couple questions are now fully reset if the player restarts their game after failing
+# Update no.3 __(10.24.21)__
+- Changes:
+  - Disabled skipping on Question 6
+- Fixes:
+  - Cookie Clicker is now fully reset (upgrades, cookie counter, etc.)
 
 ## revision2 (4.28.21)
 ![Title Image](https://github.com/inthornRojanapairatATSSU/TINAQQ/blob/master/This%20Is%20Not%20A%20Quiz%20Quiz%20rev2/src/game/title_halloweenupdate.jpg)
@@ -21,7 +26,7 @@ See the launch trailer [here!](https://www.youtube.com/watch?v=CaRHQZP4EwI)
 * You can also use *Eclipse's smart git import tool*.
 * If the project does not reference a JavaFX user library, configure it so that it does.
 * The Main application can be found in the package called *game*
-* Add this to your VM arguments: *--module-path "__YOUR JAVA DIRECTORY PATH__\lib" --add-modules javafx.controls,javafx.fxml*
+* Add this to your VM arguments: *--module-path "__YOUR JAVAFX DIRECTORY PATH__\lib" --add-modules javafx.controls,javafx.fxml*
 
 ## Overview
 A game inspired by the Impossible Quiz (2007) by Splapp.
