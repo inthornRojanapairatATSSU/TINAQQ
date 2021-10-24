@@ -21,7 +21,7 @@ See the launch trailer [here!](https://www.youtube.com/watch?v=CaRHQZP4EwI)
 ![Title Image](https://github.com/inthornRojanapairatATSSU/TINAQQ/blob/master/This%20Is%20Not%20A%20Quiz%20Quiz%20rev2/src/game/title_halloweenupdate.jpg)
 
 ## How to Install
-* Download [here](https://github.com/inthornRojanapairatATSSU/TINAQQ/archive/refs/heads/master.zip) or using *Download as ZIP*.
+* Download [here](https://github.com/inthornRojanapairatATSSU/TINAQQ/archive/refs/heads/master.zip) or use *Download as ZIP*.
 * Extract the folder called *This Is Not a Quiz Quiz rev2*, place it anywhere, and have Eclipse import it as a project.
 * You can also use *Eclipse's smart git import tool*.
 * If the project does not reference a JavaFX user library, configure it so that it does.
@@ -32,8 +32,7 @@ See the launch trailer [here!](https://www.youtube.com/watch?v=CaRHQZP4EwI)
 A game inspired by the Impossible Quiz (2007) by Splapp.
 This quiz consists of 30 total questions, but choose Easy or Normal
 and you'll only have access to half that amount. Think you
-got what it takes to go through a gauntlet of stupid questions
-and problems?
+got what it takes to go through a gauntlet of stupidity?
 
 ### Difficulty and Skips
 There are three difficulty levels: *Easy*, *Normal*, and *Hard*.  <br />
