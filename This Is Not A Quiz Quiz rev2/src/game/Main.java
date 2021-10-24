@@ -56,7 +56,7 @@ public class Main extends Application {
 		primaryStage.setTitle("This Is Not a Quiz Quiz");
 		
 		// ImageView
-		ImageView title = new ImageView(new Image(this.getClass().getResourceAsStream("title.jpg")));
+		ImageView title = new ImageView(new Image(this.getClass().getResourceAsStream("title_halloweenupdate.jpg")));
 		title.setFitWidth(400); title.setFitHeight(400);
 		title.setLayoutX(33); title.setLayoutY(31);
 		
