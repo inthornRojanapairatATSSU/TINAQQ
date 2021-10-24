@@ -33,6 +33,7 @@ public class Shop extends Q12 {
 				cookies -= 10;
 				upgrade = 1;
 				cookieCounter.setText(Integer.toString(cookies));
+				upgrade1.setDisable(true);
 			}
 		});
 		Button upgrade2 = new Button("+5 Cookie Clicks [50 Cookies]");
@@ -42,6 +43,7 @@ public class Shop extends Q12 {
 				cookies -= 50;
 				upgrade = 2;
 				cookieCounter.setText(Integer.toString(cookies));
+				upgrade2.setDisable(true);
 			}
 		});
 		Button upgrade3 = new Button("+10 Cookie Clicks [200 Cookies]");
@@ -52,6 +54,8 @@ public class Shop extends Q12 {
 				upgrade = 3;
 				cookieCounter.setText(Integer.toString(cookies));
 				stage.close();
+				upgrade1.setDisable(false);
+				upgrade2.setDisable(false);
 			}
 		});
 		Button close = new Button("Close");
