@@ -213,7 +213,7 @@ public class Main extends Application {
 				window.close();
 				questionNumber = 1;
 				skips = 0;
-				questions.Q12.display();
+				questions.Q1.display();
 				
 				// reset data
 				questions.Q12.cookies = 0;
