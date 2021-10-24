@@ -71,7 +71,7 @@ public class Q12 extends game.Main {
 					window.setTitle("Question 12 | Lives: " +lives +" | No skipping here!");
 				}
 				else {
-					cookies = 0;
+					cookies = 0; upgrade = 0;
 					window.close();
 					gameOver("Bakery Shutdown", "Did you really fail at Cookie Clicker?");
 				}
